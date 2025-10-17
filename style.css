@@ -1,0 +1,153 @@
+:root {
+    --red-color: #dc143c;
+    --black-color: #000;
+    --white-color: #fff;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-family: 'Montserrat', sans-serif;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.navBar__navLogo {
+    height: 60px;
+    width: 60px;
+}
+.openMenu {
+    display: none;
+}
+.navBar__menuIcon {
+    cursor: pointer;
+}
+.menuIcon--close {
+    display: none;
+}
+.navBar__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--black-color);
+    padding: 0 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s;
+}
+.list__item {
+    list-style: none;
+}
+.list__item a, .homeText__btn a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    transition: background .5s;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 20px;
+}
+.list__item a:hover {
+    background-color: #111;
+}
+.item--contact a, .homeText__btn a{
+    background-color: var(--red-color);
+    border-radius: 20px;
+    text-align: center;
+}
+.item--contact a:hover, .homeText__btn a:hover {
+    background-color: #dc143ccc;
+}
+.navBar:has(.openMenu:checked) .navBar__list {
+    opacity: 1;
+    pointer-events: all;
+}
+.navBar:has(.openMenu:checked) .navBar__menuIcon {
+    display: none;
+}
+.navBar:has(.openMenu:checked) .menuIcon--close {
+    display: inline;
+}
+
+/* --- HOME --- */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+.home {
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.homeLogo {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+.homeText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home h1, .home h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.home h2 {
+    font-size: 15px;
+    position: relative;
+    margin-top: 10px;
+    font-weight: 400;
+}
+.home h2::before, .home h2::after {
+    content: '';
+    background-color: var(--red-color);
+    width: 60px;
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-right: 10px;
+}
+.home h2::after {
+    left: 100%;
+    margin: 0 0 0 10px;
+}
+.home h3 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.homeText__btn {
+    background-color: transparent;
+    border: none;
+    margin-top: 30px;
+}
+.homeText__btn a {
+    padding: 10px 20px;
+    color: var(--white-color);
+}
