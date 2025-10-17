@@ -18,6 +18,9 @@ img {
     height: 100%;
     object-fit: cover;
 }
+
+/*--- NAVBAR ---*/
+
 .navBar {
     display: flex;
     justify-content: space-between;
@@ -150,4 +153,20 @@ main {
 .homeText__btn a {
     padding: 10px 20px;
     color: var(--white-color);
+}
+.homeText__arrow {
+    color: inherit;
+    opacity: .5;
+    animation: up-down infinite .6s alternate ease-in; 
+}
+.homeText__arrow span {
+    font-size: 30px;
+}
+
+/* --- ANIMATIONS ---*/
+
+@keyframes up-down {
+    to {
+        transform: translateY(10px);
+    }
 }
