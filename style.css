@@ -3,10 +3,14 @@
     --black-color: #000;
     --white-color: #fff;
 }
+html {
+    scroll-behavior: smooth;
+}
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-wrap: pretty;
 }
 body {
     background-color: var(--black-color);
@@ -29,10 +33,13 @@ img {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 10;
+    background-color: var(--black-color);
+    border-bottom: solid 1px #dc143c66;
 }
 .navBar__navLogo {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
 }
 .openMenu {
     display: none;
@@ -49,7 +56,7 @@ img {
     left: 0;
     width: 100%;
     background-color: var(--black-color);
-    padding: 0 10px;
+    padding: 0 10px 10px 10px;
     opacity: 0;
     pointer-events: none;
     transition: opacity .5s;
@@ -81,6 +88,7 @@ img {
 .navBar:has(.openMenu:checked) .navBar__list {
     opacity: 1;
     pointer-events: all;
+    border-bottom: solid 1px #dc143c66;
 }
 .navBar:has(.openMenu:checked) .navBar__menuIcon {
     display: none;
@@ -96,8 +104,9 @@ main {
     flex-direction: column;
     align-items: center;
     margin-top: 70px;
+    background: linear-gradient(to bottom, #000, #222, #000);
 }
-.home {
+.home, .about, .services, .schedules {
     height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
@@ -161,6 +170,123 @@ main {
 }
 .homeText__arrow span {
     font-size: 30px;
+}
+
+/* ---ABOUT--- */
+
+.about, .services, .schedules {
+    height: max-content;
+    text-align: left;
+    padding: 70px 20px;
+}
+.about strong {
+    color: var(--red-color);
+}
+.about h2, .services h2, .schedules h2 {
+    position: relative;
+    margin-bottom: 20px;
+}
+.about h2::before, .services h2::before, .schedules h2::before {
+    content: '';
+    height: 2px;
+    width: 70%;
+    background-color: var(--red-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 5px auto;
+}
+.about__text p, .services > p {
+    margin-top: 20px;
+}
+.about__cards {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-evenly;
+}
+.cards__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: solid 1px #dc143c66;
+    border-radius: 10px;
+    height: 130px;
+    width: 180px;
+    margin: 10px;
+    padding: 20px 0;
+    background-color: var(--black-color);
+}
+.cards__card span {
+    color: var(--red-color);
+}
+.about .cards__card p:nth-of-type(1) {
+    font-size: 20px;
+}
+.about .cards__card p:nth-of-type(2), .card--services p {
+    color: #bbb;
+    font-size: 13px;
+}
+
+/*--- SERVICES ---*/
+
+.services h3 {
+    font-size: 15px;
+}
+.services span {
+    font-size: 30px;
+}
+.services > p {
+    text-align: center;
+}
+.services__cards, .schedules {
+    width: 100%;
+}
+.card--services, .card--schedules {
+    width: 100%;
+    height: 150px;
+    margin: 30px 0;
+    align-items: start;
+    padding: 20px;
+}
+
+/*--- SCHEDULES ---*/
+
+.card--schedules {
+    height: max-content;
+}
+.card--schedules__header {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+.card--schedules__header span {
+    font-size: 30px;
+    margin-right: 5px;
+}
+.card--schedules ul {
+    width: 100%;
+    margin-top: 20px;
+}
+.card--schedules li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 13px;
+}
+.card--schedules li:nth-of-type(2) {
+    border-top: solid .5px #444;
+    border-bottom: solid .5px #444;
+}
+.card--schedules li p:nth-of-type(2) {
+    color: var(--red-color);
+    margin-left: 10px;
+    text-align: right;
 }
 
 /* --- ANIMATIONS ---*/
