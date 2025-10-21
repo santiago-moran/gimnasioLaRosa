@@ -33,9 +33,12 @@ img {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 10;
+    z-index: 20;
     background-color: var(--black-color);
-    border-bottom: solid 1px #dc143c66;
+    animation: shadow 1 .5s both;
+    animation-timeline: scroll();
+    animation-range-start: 5px;
+    animation-range-end: 250px;
 }
 .navBar__navLogo {
     height: 50px;
@@ -60,11 +63,12 @@ img {
     opacity: 0;
     pointer-events: none;
     transition: opacity .5s;
+    z-index: 10;
 }
 .list__item {
     list-style: none;
 }
-.list__item a, .homeText__btn a {
+.list__item a, .homeText__btn a, .card__button a {
     color: inherit;
     text-decoration: none;
     display: inline-block;
@@ -77,18 +81,24 @@ img {
 .list__item a:hover {
     background-color: #111;
 }
-.item--contact a, .homeText__btn a{
+.item--contact a, .homeText__btn a, .card__button a{
     background-color: var(--red-color);
     border-radius: 20px;
     text-align: center;
 }
-.item--contact a:hover, .homeText__btn a:hover {
+.item--contact a:hover, .homeText__btn a:hover, .card__button a:hover {
     background-color: #dc143ccc;
+}
+.navBar:has(.openMenu:checked) {
+    box-shadow: none;
 }
 .navBar:has(.openMenu:checked) .navBar__list {
     opacity: 1;
     pointer-events: all;
-    border-bottom: solid 1px #dc143c66;
+    animation: shadow 1 .5s both;
+    animation-timeline: scroll();
+    animation-range-start: 5px;
+    animation-range-end: 250px;
 }
 .navBar:has(.openMenu:checked) .navBar__menuIcon {
     display: none;
@@ -106,7 +116,7 @@ main {
     margin-top: 70px;
     background: linear-gradient(to bottom, #000, #222, #000);
 }
-.home, .about, .services, .schedules {
+.home, .about, .services, .schedules, .memberships {
     height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
@@ -118,6 +128,7 @@ main {
     height: 150px;
     width: 150px;
     margin-bottom: 10px;
+    filter: drop-shadow(0 0 20px var(--red-color));
 }
 .homeText {
     display: flex;
@@ -154,12 +165,12 @@ main {
     font-size: 14px;
     margin-top: 20px;
 }
-.homeText__btn {
+.homeText__btn, .card__button {
     background-color: transparent;
     border: none;
     margin-top: 30px;
 }
-.homeText__btn a {
+.homeText__btn a, .card__button a {
     padding: 10px 20px;
     color: var(--white-color);
 }
@@ -174,7 +185,7 @@ main {
 
 /* ---ABOUT--- */
 
-.about, .services, .schedules {
+.about, .services, .schedules, .memberships {
     height: max-content;
     text-align: left;
     padding: 70px 20px;
@@ -182,11 +193,11 @@ main {
 .about strong {
     color: var(--red-color);
 }
-.about h2, .services h2, .schedules h2 {
+.about h2, .services h2, .schedules h2, .memberships h2 {
     position: relative;
     margin-bottom: 20px;
 }
-.about h2::before, .services h2::before, .schedules h2::before {
+.about h2::before, .services h2::before, .schedules h2::before, .memberships h2::before {
     content: '';
     height: 2px;
     width: 70%;
@@ -219,6 +230,11 @@ main {
     margin: 10px;
     padding: 20px 0;
     background-color: var(--black-color);
+    transition: box-shadow .5s, transform .5s;
+}
+.cards__card:hover {
+    box-shadow: 0 0 10px var(--red-color);
+    transform: translateY(-10px);
 }
 .cards__card span {
     color: var(--red-color);
@@ -239,10 +255,10 @@ main {
 .services span {
     font-size: 30px;
 }
-.services > p {
+.services > p, .memberships > p {
     text-align: center;
 }
-.services__cards, .schedules {
+.services__cards, .schedules, .memberships {
     width: 100%;
 }
 .card--services, .card--schedules {
@@ -257,6 +273,9 @@ main {
 
 .card--schedules {
     height: max-content;
+}
+.card--schedules:hover {
+    transform: translate(0);
 }
 .card--schedules__header {
     display: flex;
@@ -289,10 +308,103 @@ main {
     text-align: right;
 }
 
+/*--- MEMBERSHIPS ---*/
+
+.memberships__cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.memberships__card {
+    background-color: #111;
+    border: solid 1px #222;
+    width: 100%;
+    max-width: 400px;
+    height: 380px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 13px;
+}
+.card__header {
+    text-align: center;
+}
+.header__time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__time > span {
+    color: var(--red-color);
+    margin-right: 5px;
+}
+.header__offer {
+    background-color: var(--red-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.header__offer > p:nth-of-type(1) {
+    font-size: 10px;
+}
+.offer__price {
+    font-weight: bold;
+    font-size: 20px;
+}
+.offer__price span {
+    font-weight: normal;
+    font-size: 13px;
+    color: #bbb;
+}
+.header__regularPrice {
+    color: #bbb;
+    text-decoration: line-through;
+    text-decoration-color: #fff9;
+}
+.card__advantages ul li {
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.card__advantages ul li::marker {
+    color: var(--red-color);
+    content: '✓';
+}
+.card__button-container {
+    width: 100%;
+}
+.card__button {
+    width: 100%;
+}
+.card--popular {
+    border-color: var(--red-color);
+    position: relative;
+}
+.card--popular::before {
+    content: 'Mas Popular';
+    position: absolute;
+    background-color: var(--red-color);
+    padding:  5px 10px;
+    border-radius: 15px;
+    top: -15px;
+    font-weight: bold;
+}
 /* --- ANIMATIONS ---*/
 
 @keyframes up-down {
     to {
         transform: translateY(10px);
+    }
+}
+@keyframes shadow {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow: 0 10px 20px -10px var(--red-color);
     }
 }
