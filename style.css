@@ -196,6 +196,7 @@ main {
 .about h2, .services h2, .schedules h2, .memberships h2, .facilities h2 {
     position: relative;
     margin-bottom: 20px;
+    text-align: center;
 }
 .about h2::before, .services h2::before, .schedules h2::before, .memberships h2::before, .facilities h2::before {
     content: '';
@@ -485,6 +486,9 @@ main {
     translate: -150%;
     padding-top: 5px;
 }
+.facilities__gallery::scroll-button(left):active, .facilities__gallery::scroll-button(right):active {
+    scale: .9;
+}
 .facilities__gallery::scroll-button(left) {
     transform: rotate(180deg);
     position-area: left center;
@@ -493,6 +497,7 @@ main {
 .facilities__gallery::scroll-button(left):disabled, .facilities__gallery::scroll-button(right):disabled {
     opacity: .5;
     cursor: auto;
+    scale: 1;
 }
 .gallery__image {
     scroll-snap-align: start;
@@ -526,7 +531,7 @@ main {
     0% {
         display: flex;
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(5px);
     }
     50% {
         display: flex;
@@ -539,8 +544,15 @@ main {
     }
 }
 @keyframes hideCard {
-    to {
-        scale: 0;
+    0% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-40px);
+    }
+    100% {
         opacity: 0;
         display: none;
     }
