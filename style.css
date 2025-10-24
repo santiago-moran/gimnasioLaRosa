@@ -116,7 +116,7 @@ main {
     margin-top: 70px;
     background: linear-gradient(to bottom, #000, #222, #000);
 }
-.home, .about, .services, .schedules, .memberships {
+.home, .about, .services, .schedules, .memberships, .facilities {
     height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
@@ -185,7 +185,7 @@ main {
 
 /* ---ABOUT--- */
 
-.about, .services, .schedules, .memberships {
+.about, .services, .schedules, .memberships, .facilities {
     height: max-content;
     text-align: left;
     padding: 70px 20px;
@@ -193,11 +193,11 @@ main {
 .about strong {
     color: var(--red-color);
 }
-.about h2, .services h2, .schedules h2, .memberships h2 {
+.about h2, .services h2, .schedules h2, .memberships h2, .facilities h2 {
     position: relative;
     margin-bottom: 20px;
 }
-.about h2::before, .services h2::before, .schedules h2::before, .memberships h2::before {
+.about h2::before, .services h2::before, .schedules h2::before, .memberships h2::before, .facilities h2::before {
     content: '';
     height: 2px;
     width: 70%;
@@ -255,10 +255,10 @@ main {
 .services span {
     font-size: 30px;
 }
-.services > p, .memberships > p {
+.services > p, .memberships > p, .facilities > p {
     text-align: center;
 }
-.services__cards, .schedules, .memberships {
+.services__cards, .schedules, .memberships, .facilities {
     width: 100%;
 }
 .card--services, .card--schedules {
@@ -448,6 +448,65 @@ main {
 .card--hidden {
     animation: hideCard .3s 1 forwards ease-in;
 }
+.memberships > p:last-child {
+    color: #bbb;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/*--- FACILITIES ---*/
+
+.facilities__gallery {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    anchor-name: --carousel;
+    scroll-snap-type: x mandatory;
+    margin-top: 50px;
+}
+.facilities__gallery::-webkit-scrollbar {
+    display: none;
+}
+.facilities__gallery::scroll-button(right), .facilities__gallery::scroll-button(left)  {
+    content: url(images/arrow-carousel.svg);
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #0005;
+    color: var(--white-color);
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --carousel;
+    position-area: right center;
+    translate: -150%;
+    padding-top: 5px;
+}
+.facilities__gallery::scroll-button(left) {
+    transform: rotate(180deg);
+    position-area: left center;
+    translate: 150%;
+}
+.facilities__gallery::scroll-button(left):disabled, .facilities__gallery::scroll-button(right):disabled {
+    opacity: .5;
+    cursor: auto;
+}
+.gallery__image {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background-color: #222;
+    height: 300px;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 15px;
+}
+
 /* --- ANIMATIONS ---*/
 
 @keyframes up-down {
