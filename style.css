@@ -68,7 +68,7 @@ img {
 .list__item {
     list-style: none;
 }
-.list__item a, .homeText__btn a, .card__button a {
+.list__item a, .homeText__btn a, .card__button a, .clients__btn a {
     color: inherit;
     text-decoration: none;
     display: inline-block;
@@ -81,12 +81,12 @@ img {
 .list__item a:hover {
     background-color: #111;
 }
-.item--contact a, .homeText__btn a, .card__button a{
+.item--contact a, .homeText__btn a, .card__button a, .clients__btn a, form button{
     background-color: var(--red-color);
     border-radius: 20px;
     text-align: center;
 }
-.item--contact a:hover, .homeText__btn a:hover, .card__button a:hover {
+.item--contact a:hover, .homeText__btn a:hover, .card__button a:hover, .clients__btn a:hover, form button:hover {
     background-color: #dc143ccc;
 }
 .navBar:has(.openMenu:checked) {
@@ -116,7 +116,7 @@ main {
     margin-top: 70px;
     background: linear-gradient(to bottom, #000, #222, #000);
 }
-.home, .about, .services, .schedules, .memberships, .facilities {
+.home, .about, .services, .schedules, .memberships, .facilities, .clients, .contact {
     height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
@@ -165,12 +165,12 @@ main {
     font-size: 14px;
     margin-top: 20px;
 }
-.homeText__btn, .card__button {
+.homeText__btn, .card__button, .clients__btn {
     background-color: transparent;
     border: none;
     margin-top: 30px;
 }
-.homeText__btn a, .card__button a {
+.homeText__btn a, .card__button a, .clients__btn a, form button {
     padding: 10px 20px;
     color: var(--white-color);
 }
@@ -185,7 +185,7 @@ main {
 
 /* ---ABOUT--- */
 
-.about, .services, .schedules, .memberships, .facilities {
+.about, .services, .schedules, .memberships, .facilities, .clients, .contact {
     height: max-content;
     text-align: left;
     padding: 70px 20px;
@@ -193,12 +193,12 @@ main {
 .about strong {
     color: var(--red-color);
 }
-.about h2, .services h2, .schedules h2, .memberships h2, .facilities h2 {
+.about h2, .services h2, .schedules h2, .memberships h2, .facilities h2, .clients h2, .contact h2 {
     position: relative;
     margin-bottom: 20px;
     text-align: center;
 }
-.about h2::before, .services h2::before, .schedules h2::before, .memberships h2::before, .facilities h2::before {
+.about h2::before, .services h2::before, .schedules h2::before, .memberships h2::before, .facilities h2::before, .clients h2::before, .contact h2::before {
     content: '';
     height: 2px;
     width: 70%;
@@ -219,7 +219,7 @@ main {
     justify-content: center;
     align-content: space-evenly;
 }
-.cards__card {
+.cards__card, .reviews__client {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -256,10 +256,10 @@ main {
 .services span {
     font-size: 30px;
 }
-.services > p, .memberships > p, .facilities > p {
+.services > p, .memberships > p, .facilities > p, .clients > p {
     text-align: center;
 }
-.services__cards, .schedules, .memberships, .facilities {
+.services__cards, .schedules, .memberships, .facilities, .clients, .contact {
     width: 100%;
 }
 .card--services, .card--schedules {
@@ -277,6 +277,7 @@ main {
 }
 .card--schedules:hover {
     transform: translate(0);
+    box-shadow: none;
 }
 .card--schedules__header {
     display: flex;
@@ -332,10 +333,11 @@ main {
     border-radius: 10px;
     padding: 20px;
     font-size: 13px;
-    transition: transform .5s;
+    transition: transform .5s, box-shadow .5s;
 }
 .memberships__card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--red-color);
 }
 .card__header {
     text-align: center;
@@ -387,7 +389,8 @@ main {
     width: 100%;
 }
 .card--popular {
-    box-shadow: 0 0 10px var(--red-color), 0 0 40px var(--red-color);
+    border: solid 2px var(--red-color);
+    /* box-shadow: 0 0 10px var(--red-color), 0 0 40px var(--red-color); */
     position: relative;
 }
 .card--popular::before {
@@ -457,7 +460,7 @@ main {
 
 /*--- FACILITIES ---*/
 
-.facilities__gallery {
+.facilities__gallery, .clients__reviews {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -468,10 +471,10 @@ main {
     scroll-snap-type: x mandatory;
     margin-top: 50px;
 }
-.facilities__gallery::-webkit-scrollbar {
+.facilities__gallery::-webkit-scrollbar, .clients__reviews::-webkit-scrollbar {
     display: none;
 }
-.facilities__gallery::scroll-button(right), .facilities__gallery::scroll-button(left)  {
+.facilities__gallery::scroll-button(right), .facilities__gallery::scroll-button(left), .clients__reviews::scroll-button(left), .clients__reviews::scroll-button(right) {
     content: url(images/arrow-carousel.svg);
     border: none;
     height: 40px;
@@ -484,22 +487,23 @@ main {
     position-anchor: --carousel;
     position-area: right center;
     translate: -150%;
-    padding-top: 5px;
+    padding: 5px 0 0 3px;
 }
-.facilities__gallery::scroll-button(left):active, .facilities__gallery::scroll-button(right):active {
+.facilities__gallery::scroll-button(left):active, .facilities__gallery::scroll-button(right):active, .clients__reviews::scroll-button(left):active, .clients__reviews::scroll-button(right):active {
     scale: .9;
 }
-.facilities__gallery::scroll-button(left) {
+.facilities__gallery::scroll-button(left), .clients__reviews::scroll-button(left) {
     transform: rotate(180deg);
     position-area: left center;
     translate: 150%;
+    padding: 3px 0 0 3px;
 }
-.facilities__gallery::scroll-button(left):disabled, .facilities__gallery::scroll-button(right):disabled {
+.facilities__gallery::scroll-button(left):disabled, .facilities__gallery::scroll-button(right):disabled, .clients__reviews::scroll-button(left):disabled, .clients__reviews::scroll-button(right):disabled {
     opacity: .5;
     cursor: auto;
     scale: 1;
 }
-.gallery__image {
+.gallery__image, .reviews__client {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     background-color: #222;
@@ -511,6 +515,225 @@ main {
     font-size: 30px;
     border-radius: 15px;
 }
+
+/*--- CLIENTS ---*/
+
+.clients__reviews {
+    anchor-name: --reviews-carousel;
+}
+.clients__reviews::scroll-button(left), .clients__reviews::scroll-button(right) {
+    position-anchor: --reviews-carousel;
+    background-color: #dc143cbb;
+    translate: 55%;
+    height: 30px;
+    width: 30px;
+}
+.clients__reviews::scroll-button(right) {
+    translate: -55%;
+}
+.reviews__client {
+    height: 220px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    font-size: 13px;
+    border-color: #333;
+    background-color: #111;
+    margin: 0;
+}
+.iconStar {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: var(--red-color);
+    font-size: 20px;
+}
+.client__about {
+    display: flex;
+    align-items: center;
+}
+.about__img, .footer__img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+.client__about div > p:first-child {
+    font-size: 15px;
+}
+.client__about div > p:last-child {
+    color: #bbb;
+}
+.clients__join {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+.clients__join p {
+    color: #bbb;
+    font-size: 14px;
+}
+.clients__btn {
+    margin-top: 10px;
+}
+
+/*--- CONTACT ---*/
+
+.contact__contact-info {
+    align-self: start;
+}
+.contact__contact-info > div {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 20px;
+}
+.contact__contact-info span {
+    color: var(--red-color);
+    margin-right: 10px;
+}
+.contact__contact-info h3 {
+    font-weight: 400;
+}
+.contact__contact-info a {
+    color: #bbb;
+    text-decoration: none;
+    margin-top: 5px;
+}
+.contact__contact-info a {
+    display: inline-block;
+}
+.contact__contact-info a:hover {
+    text-decoration: underline;
+}
+.contact-info__social-ntw {
+    gap: 10px;
+}
+.contact-info__social-ntw div{
+    height: 40px;
+    width: 40px;
+}
+.contact-info__social-ntw a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    background-color: #222;
+    border-radius: 50%;
+    transition: background .5s;
+}
+.contact-info__social-ntw a:hover {
+    text-decoration: none;
+    background-color: var(--red-color);
+}
+.contact-info__social-ntw i {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #222a;
+    padding: 0 20px 20px 20px;
+    border-radius: 10px;
+    border: solid 1px #333;
+    margin-top: 50px;
+    width: 100%;
+}
+.form fieldset {
+    border: solid 1px #333;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 20px;
+    background-color: #222;
+}
+.form legend {
+    text-align: center;
+    padding: 0 10px;
+    font-weight: bold;
+}
+fieldset div, .form > div {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin-top: 5px;
+    background-color: #1118;
+    border: solid 1px #333;
+    padding: 10px 20px;
+    font-family: inherit;
+    border-radius: 10px;
+    transition: outline .5s;
+}
+textarea {
+    background-color: #111;
+    border: solid 1px #333;
+    resize: none;
+    border-radius: 10px;
+    height: 100px;
+    font-family: inherit;
+    transition: outline .5s;
+    padding: 10px;
+    margin-top: 5px;
+    color: var(--white-color);
+}
+textarea:focus, input:focus {
+    outline: solid .5px var(--red-color);
+}
+textarea::-webkit-scrollbar {
+    width: 7px;
+}
+textarea::-webkit-scrollbar-thumb {
+    background-color: #222;
+    cursor: pointer;
+}
+form button {
+    border: none;
+    transition: background .5s;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/*--- FOOTER ---*/
+
+footer {
+    border-top: solid 1px #222;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-header {
+    display: flex;
+    align-items: center;
+}
+footer h2, footer h3 {
+    font-size: 13px;
+}
+.since1990, .rightsReserved {
+    font-weight: 400;
+    color: #bbb;
+    font-size: 12px;
+}
+footer p {
+    margin-top: 20px;
+}
+.contact-info--footer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
 
 /* --- ANIMATIONS ---*/
 
