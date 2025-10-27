@@ -674,6 +674,7 @@ input {
     font-family: inherit;
     border-radius: 10px;
     transition: outline .5s;
+    color: var(--white-color);
 }
 textarea {
     background-color: #111;
