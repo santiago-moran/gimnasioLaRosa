@@ -1,443 +1,496 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/logo-laRosa.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/79a487990f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>La Rosa - Gimnasio</title>
-</head>
-<body>
-    <header>
-        <nav class="navBar">
-            <div class="navBar__navLogo">
-                <img src="images/logo-laRosa.png" alt="Logo del Gimnasio La Rosa">
-            </div>
-            <div>
-                <input type="checkbox" id="openMenu" class="openMenu">
-                <label for="openMenu">
-                    <span class="material-symbols-outlined navBar__menuIcon">density_medium</span>
-                    <span class="material-symbols-outlined navBar__menuIcon menuIcon--close">close</span>
-                </label>
-                <div class="navBar__list">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/logo-laRosa.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/79a487990f.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>La Rosa - Gimnasio</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navBar">
+                <div class="navBar__navLogo">
+                    <img src="images/logo-laRosa.png" alt="Logo del Gimnasio La Rosa">
+                </div>
+                <div>
+                    <input type="checkbox" id="openMenu" class="openMenu">
+                    <label for="openMenu">
+                        <span class="material-symbols-outlined navBar__menuIcon">density_medium</span>
+                        <span class="material-symbols-outlined navBar__menuIcon menuIcon--close">close</span>
+                    </label>
+                    <div class="navBar__list">
+                        <ul>
+                            <li class="list__item"><a href="#about">Nosotros</a></li>
+                            <li class="list__item"><a href="#services">Servicios</a></li>
+                            <li class="list__item"><a href="#schedules">Horarios</a></li>
+                            <li class="list__item"><a href="#memberships">Membresías</a></li>
+                            <li class="list__item item--contact"><a href="#contact">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="home">
+                <div class="homeLogo">
+                    <img src="images/logo-laRosa.png" alt="Logo del Gimnasio La Rosa">
+                </div>
+                <div class="homeText">
+                    <h1>La Rosa Gimnasio</h1>
+                    <h2>Desde 1990</h2>
+                    <h3>Más de 30 años forjando campeones y transformando vidas.</h3>
+                    <button class="homeText__btn">
+                        <a target="_blank" href="https://wa.me/5491154558053?text=Hola%2C%20estuve%20explorando%20su%20página%20web%20y%20me%20gustaría%20inscribirme">Únete Ahora</a>
+                    </button>
+                    <a href="#about" class="homeText__arrow">
+                        <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                    </a>
+                </div>
+            </section>
+            <section class="about" id="about">
+                <h2>Nuestra Historia</h2>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p>Desde 1990, <strong>La Rosa Gimnasio</strong> ha sido el punto de referencia para quienes buscan superarse física y mentalmente. Con más de tres décadas de experiencia, nos hemos convertido en una familia donde cada miembro es importante.</p>
+                        <p>Nuestro compromiso es brindarte las mejores instalaciones, equipos de última generación y un equipo de entrenadores profesionales dedicados a ayudarte a alcanzar tus metas.</p>
+                    </div>
+                    <div class="about__cards">
+                        <div class="cards__card">
+                            <span class="material-symbols-outlined">license</span>
+                            <p><b>30+</b></p>
+                            <p>Años</p>
+                        </div>
+                        <div class="cards__card">
+                            <span class="material-symbols-outlined">group</span>
+                            <p><b>5000+</b></p>
+                            <p>Miembros</p>
+                        </div>
+                        <div class="cards__card">
+                            <span class="material-symbols-outlined">trophy</span>
+                            <p><b>100+</b></p>
+                            <p>Campeones</p>
+                        </div>
+                        <div class="cards__card">
+                            <span class="material-symbols-outlined">favorite</span>
+                            <p><b>100%</b></p>
+                            <p>Dedicación</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="services" id="services">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos una amplia variedad de servicios para que alcances tus objetivos.</p>
+                <div class="services__cards">
+                    <div class="cards__card card--services">
+                        <span class="material-symbols-outlined">fitness_center</span>
+                        <h3>Musculación</h3>
+                        <p>Equipos de última generación para desarrollo muscular y fuerza.</p>
+                    </div>
+                    <div class="cards__card card--services">
+                        <span class="material-symbols-outlined">mode_heat</span>
+                        <h3>Cardio</h3>
+                        <p>Zona de cardio completa con máquinas modernas para quemar calorías.</p>
+                    </div>
+                    <div class="cards__card card--services">
+                        <span class="material-symbols-outlined">target</span>
+                        <h3>Entrenamiento personal</h3>
+                        <p>Planes personalizados con entrenadores profesionales.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="schedules" id="schedules">
+                <h2>Horarios</h2>
+                <div class="cards__card card--schedules">
+                    <div class="card--schedules__header">
+                        <span class="material-symbols-outlined">schedule</span>
+                        <h3>Horario General</h3>
+                    </div>
                     <ul>
-                        <li class="list__item"><a href="#about">Nosotros</a></li>
-                        <li class="list__item"><a href="#services">Servicios</a></li>
-                        <li class="list__item"><a href="#schedules">Horarios</a></li>
-                        <li class="list__item"><a href="#memberships">Membresias</a></li>
-                        <li class="list__item item--contact"><a href="#contact">Contacto</a></li>
+                        <li>
+                            <p>Lunes - Viernes</p>
+                            <p>7:00 AM - 11:00 PM</p>
+                        </li>
+                        <li>
+                            <p>Sábado</p>
+                            <p>9:00 AM - 9:00 PM</p>
+                        </li>
+                        <li>
+                            <p>Domingo</p>
+                            <p>Cerrado</p>
+                        </li>
                     </ul>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="home">
-            <div class="homeLogo">
-                <img src="images/logo-laRosa.png" alt="Logo del Gimnasio La Rosa">
-            </div>
-            <div class="homeText">
-                <h1>La Rosa Gimnasio</h1>
-                <h2>Desde 1990</h2>
-                <h3>Mas de 30 anos forjando campeones y transformando vidas.</h3>
-                <button class="homeText__btn">
-                    <a href="#">Unete Ahora</a>
-                </button>
-                <a href="#about" class="homeText__arrow">
-                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                </a>
-            </div>
-        </section>
-        <section class="about" id="about">
-            <h2>Nuestra Historia</h2>
-            <div class="about__text">
-                <p>Desde 1990, <strong>La Rosa Gimnasio</strong> ha sido el punto de referencia para quienes buscan superarse fisica y mentalmente. Con mas de tres decadas de experiencia, nos hemos convertido en una familia donde cada miembro es importante.</p>
-                <p>Nuestro  compromiso es brindarte las mejores instalaciones, equipos de ultima generacion y un equipo de entrenadores profesionales dedicados a ayudarte a alcanzar tus metas.</p>
-            </div>
-            <div class="about__cards">
-                <div class="cards__card">
-                    <span class="material-symbols-outlined">license</span>
-                    <p><b>30+</b></p>
-                    <p>Anos</p>
-                </div>
-                <div class="cards__card">
-                    <span class="material-symbols-outlined">group</span>
-                    <p><b>5000+</b></p>
-                    <p>Miembros</p>
-                </div>
-                <div class="cards__card">
-                    <span class="material-symbols-outlined">trophy</span>
-                    <p><b>100+</b></p>
-                    <p>Campeones</p>
-                </div>
-                <div class="cards__card">
-                    <span class="material-symbols-outlined">favorite</span>
-                    <p><b>100%</b></p>
-                    <p>Dedicacion</p>
-                </div>
-            </div>
-        </section>
-        <section class="services" id="services">
-            <h2>Nuestros Servicios</h2>
-            <p>Ofrecemos una amplia variedad de servicios para que alcances tus objetivos.</p>
-            <div class="services__cards">
-                <div class="cards__card card--services">
-                    <span class="material-symbols-outlined">fitness_center</span>
-                    <h3>Musculacion</h3>
-                    <p>Equipos de ultima generacion para desarrollo muscular y fuerza.</p>
-                </div>
-                <div class="cards__card card--services">
-                    <span class="material-symbols-outlined">mode_heat</span>
-                    <h3>Cardio</h3>
-                    <p>Zona de cardio completa con maquinas modernas para quemar calorias.</p>
-                </div>
-                <div class="cards__card card--services">
-                    <span class="material-symbols-outlined">target</span>
-                    <h3>Entrenamiento personal</h3>
-                    <p>Planes personalizados con entrenadores profesionales.</p>
-                </div>
-            </div>
-        </section>
-        <section class="schedules" id="schedules">
-            <h2>Horarios</h2>
-            <div class="cards__card card--schedules">
-                <div class="card--schedules__header">
-                    <span class="material-symbols-outlined">schedule</span>
-                    <h3>Horario General</h3>
-                </div>
-                <ul>
-                    <li>
-                        <p>Lunes - Viernes</p>
-                        <p>7:00 AM - 11:00 PM</p>
-                    </li>
-                    <li>
-                        <p>Sabado</p>
-                        <p>9:00 AM - 9:00 PM</p>
-                    </li>
-                    <li>
-                        <p>Domingo</p>
-                        <p>Cerrado</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="memberships" id="memberships">
-            <h2>Membresias</h2>
-            <p>Elige el plan que mejor se adapte a tus necesidades y objetivos.</p>
-            <div class="memberships__cards">
-                <div class="memberships__card">
-                    <div class="card__header">
-                        <div class="header__time">
-                            <span class="material-symbols-outlined">calendar_today</span>
-                            <h3>Por Dia</h3>
-                        </div>
-                        <div>
-                            <div class="header__offer">
-                                <p>DESCUENTO EN EFECTIVO</p>
-                                <p class="offer__price">$10.000 <span>/ dia</span></p>
+            </section>
+            <section class="memberships" id="memberships">
+                <h2>Membresías</h2>
+                <p>Elige el plan que mejor se adapte a tus necesidades y objetivos.</p>
+                <div class="memberships__cards">
+                    <div class="memberships__card">
+                        <div class="card__header">
+                            <div class="header__time">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <h3>Por Día</h3>
                             </div>
-                            <p class="header__regularPrice">Precio regular: $12.000</p>
+                            <div>
+                                <div class="header__offer">
+                                    <p>DESCUENTO EN EFECTIVO</p>
+                                    <p class="offer__price">$10.000 <span>/ día</span></p>
+                                </div>
+                                <p class="header__regularPrice">Precio regular: $12.000</p>
+                            </div>
+                        </div>
+                        <div class="card__advantages">
+                            <ul>
+                                <li>Acceso completo por 1 día</li>
+                                <li>Área de musculación</li>
+                                <li>Zona de cardio</li>
+                            </ul>
+                        </div>
+                        <div class="card__button-container">
+                            <button class="card__button">
+                                <a href="#">Seleccionar Plan</a>
+                            </button>
                         </div>
                     </div>
-                    <div class="card__advantages">
-                        <ul>
-                            <li>Acceso completo por 1 dia</li>
-                            <li>Area de musculacion</li>
-                            <li>Zona de cardio</li>
-                        </ul>
+                    <div class="memberships__card card--hidden">
+                        <div class="card__header">
+                            <div class="header__time">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <h3>Quincena</h3>
+                            </div>
+                            <div>
+                                <div class="header__offer">
+                                    <p>DESCUENTO EN EFECTIVO</p>
+                                    <p class="offer__price">$30.000 <span>/ quincena</span></p>
+                                </div>
+                                <p class="header__regularPrice">Precio regular: $36.000</p>
+                            </div>
+                        </div>
+                        <div class="card__advantages">
+                            <ul>
+                                <li>Acceso por 15 días</li>
+                                <li>Área de musculación</li>
+                                <li>Zona de cardio</li>
+                                <li>Horario completo</li>
+                            </ul>
+                        </div>
+                        <div class="card__button-container">
+                            <button class="card__button">
+                                <a href="#">Seleccionar Plan</a>
+                            </button>
+                        </div>
                     </div>
-                    <div class="card__button-container">
-                        <button class="card__button">
-                            <a href="#">Seleccionar Plan</a>
-                        </button>
+                    <div class="memberships__card card--popular">
+                        <div class="card__header">
+                            <div class="header__time">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <h3>1 Mes</h3>
+                            </div>
+                            <div>
+                                <div class="header__offer">
+                                    <p>DESCUENTO EN EFECTIVO</p>
+                                    <p class="offer__price">$40.000 <span>/ mes</span></p>
+                                </div>
+                                <p class="header__regularPrice">Precio regular: $48.000</p>
+                            </div>
+                        </div>
+                        <div class="card__advantages">
+                            <ul>
+                                <li>Acceso por 30 días</li>
+                                <li>Área de musculación</li>
+                                <li>Zona de cardio</li>
+                                <li>Horario completo</li>
+                            </ul>
+                        </div>
+                        <div class="card__button-container">
+                            <button class="card__button">
+                                <a href="#">Seleccionar Plan</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="memberships__card card--hidden">
+                        <div class="card__header">
+                            <div class="header__time">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <h3>Trimestre</h3>
+                            </div>
+                            <div>
+                                <div class="header__offer">
+                                    <p>DESCUENTO EN EFECTIVO</p>
+                                    <p class="offer__price">$110.000 <span>/ 3 meses</span></p>
+                                </div>
+                                <p class="header__regularPrice">Precio regular: $130.000</p>
+                            </div>
+                        </div>
+                        <div class="card__advantages">
+                            <ul>
+                                <li>Acceso por 3 meses</li>
+                                <li>Área de musculación</li>
+                                <li>Zona de cardio</li>
+                                <li>Horario completo</li>
+                                <li>Mejor ahorro</li>
+                            </ul>
+                        </div>
+                        <div class="card__button-container">
+                            <button class="card__button">
+                                <a href="#">Seleccionar Plan</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="memberships__card card--hidden">
+                        <div class="card__header">
+                            <div class="header__time">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <h3>Semestre</h3>
+                            </div>
+                            <div>
+                                <div class="header__offer">
+                                    <p>DESCUENTO EN EFECTIVO</p>
+                                    <p class="offer__price">$220.000 <span>/ 6 meses</span></p>
+                                </div>
+                                <p class="header__regularPrice">Precio regular: $260.000</p>
+                            </div>
+                        </div>
+                        <div class="card__advantages">
+                            <ul>
+                                <li>Acceso por 6 meses</li>
+                                <li>Área de musculación</li>
+                                <li>Zona de cardio</li>
+                                <li>Horario completo</li>
+                                <li>Excelente descuento</li>
+                            </ul>
+                        </div>
+                        <div class="card__button-container">
+                            <button class="card__button">
+                                <a href="#">Seleccionar Plan</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="memberships__card">
+                        <div class="card__header">
+                            <div class="header__time">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <h3>Anual</h3>
+                            </div>
+                            <div>
+                                <div class="header__offer">
+                                    <p>DESCUENTO EN EFECTIVO</p>
+                                    <p class="offer__price">$440.000 <span>/ año</span></p>
+                                </div>
+                                <p class="header__regularPrice">Precio regular: $480.000</p>
+                            </div>
+                        </div>
+                        <div class="card__advantages">
+                            <ul>
+                                <li>Acceso por 12 meses</li>
+                                <li>Área de musculación</li>
+                                <li>Zona de cardio</li>
+                                <li>Horario completo</li>
+                                <li>Máximo ahorro</li>
+                            </ul>
+                        </div>
+                        <div class="card__button-container">
+                            <button class="card__button">
+                                <a href="#">Seleccionar Plan</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="memberships__card card--hidden">
-                    <div class="card__header">
-                        <div class="header__time">
-                            <span class="material-symbols-outlined">calendar_today</span>
-                            <h3>Quincena</h3>
-                        </div>
-                        <div>
-                            <div class="header__offer">
-                                <p>DESCUENTO EN EFECTIVO</p>
-                                <p class="offer__price">$30.000 <span>/ quincena</span></p>
-                            </div>
-                            <p class="header__regularPrice">Precio regular: $36.000</p>
-                        </div>
+                <div class="memberships__containerBtnAllCards">
+                    <input type="checkbox" id="showAllCards" class="showAllCards">
+                    <button>
+                        <label for="showAllCards" class="containerBtnAllCards__btnAllCards">
+                            <span class="allCards">Ver todos los planes</span>
+                            <span class="lessCards">Ver menos planes</span>
+                            <span class="material-symbols-outlined btnAllCards__arrow">
+                                keyboard_arrow_down
+                            </span>
+                        </label>
+                    </button>
+                </div>
+                <p>*Los precios incluyen acceso completo a todas las instalaciones durante el horario establecido</p>
+            </section>
+            <section class="facilities">
+                <h2>Nuestras Instalaciones</h2>
+                <p>Conocé nuestros espacios equipados con tecnología de última generación</p>
+                <div class="facilities__gallery">
+                    <div class="gallery__group">
+                        <div class="gallery__image">Imagen 1</div>
+                        <div class="gallery__image">Imagen 2</div>
+                        <div class="gallery__image">Imagen 3</div>
+                        <div class="gallery__image">Imagen 4</div>
+                        <div class="gallery__image">Imagen 5</div>
+                        <div class="gallery__image">Imagen 6</div>
                     </div>
-                    <div class="card__advantages">
-                        <ul>
-                            <li>Acceso por 15 dias</li>
-                            <li>Area de musculacion</li>
-                            <li>Zona de cardio</li>
-                            <li>Horario completo</li>
-                        </ul>
-                    </div>
-                    <div class="card__button-container">
-                        <button class="card__button">
-                            <a href="#">Seleccionar Plan</a>
-                        </button>
+                    <div class="gallery__group">
+                        <div class="gallery__image">Imagen 1</div>
+                        <div class="gallery__image">Imagen 2</div>
+                        <div class="gallery__image">Imagen 3</div>
+                        <div class="gallery__image">Imagen 4</div>
+                        <div class="gallery__image">Imagen 5</div>
+                        <div class="gallery__image">Imagen 6</div>
                     </div>
                 </div>
-                <div class="memberships__card card--popular">
-                    <div class="card__header">
-                        <div class="header__time">
-                            <span class="material-symbols-outlined">calendar_today</span>
-                            <h3>1 Mes</h3>
+            </section>
+            <section class="clients">
+                <h2>Lo que Dicen Nuestros Clientes</h2>
+                <p>Historias reales de personas que transformaron sus vidas en La Rosa</p>
+                <div class="clients__reviews">
+                    <div class="reviews__client">
+                        <div>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
                         </div>
                         <div>
-                            <div class="header__offer">
-                                <p>DESCUENTO EN EFECTIVO</p>
-                                <p class="offer__price">$40.000 <span>/ mes</span></p>
+                            <p>"Excelente gimnasio, atendido por profesionales atentos a la necesidad de cada uno, muy buenas máquinas, mantenimiento e higiene impecable. Mis 5 estrellas por la calidad y calidez."</p>
+                        </div>
+                        <div class="client__about">
+                            <div class="about__img">
+                                <img src="images/logo-laRosa.png" alt="">
                             </div>
-                            <p class="header__regularPrice">Precio regular: $48.000</p>
+                            <div>
+                                <p>Marisol Apóstoles</p>
+                                <p>Miembro desde 2020</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="card__advantages">
-                        <ul>
-                            <li>Acceso por 30 dias</li>
-                            <li>Area de musculacion</li>
-                            <li>Zona de cardio</li>
-                            <li>Horario completo</li>
-                        </ul>
+                    <div class="reviews__client">
+                        <div>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                        </div>
+                        <div>
+                            <p>"El mejor lugar para entrenar en serio y seguro. Gente capacitada y además un clima social alegre."</p>
+                        </div>
+                        <div class="client__about">
+                            <div class="about__img">
+                                <img src="images/logo-laRosa.png" alt="">
+                            </div>
+                            <div>
+                                <p>Juan Sorini</p>
+                                <p>Miembro desde 2021</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card__button-container">
-                        <button class="card__button">
-                            <a href="#">Seleccionar Plan</a>
-                        </button>
+                    <div class="reviews__client">
+                        <div>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                        </div>
+                        <div>
+                            <p>"Excelente ambiente. Profesores atentos a las necesidades y dudas. Excelente lugar."</p>
+                        </div>
+                        <div class="client__about">
+                            <div class="about__img">
+                                <img src="images/logo-laRosa.png" alt="">
+                            </div>
+                            <div>
+                                <p>Matías Romero</p>
+                                <p>Miembro desde 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__client">
+                        <div>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                            <span class="material-symbols-outlined iconStar">star</span>
+                        </div>
+                        <div>
+                            <p>"Notable asesoramiento y diversos aparatos para realizar la actividad que nos proporciona el profe. Todo OK."</p>
+                        </div>
+                        <div class="client__about">
+                            <div class="about__img">
+                                <img src="images/logo-laRosa.png" alt="">
+                            </div>
+                            <div>
+                                <p>Ángel Simeoni</p>
+                                <p>Miembro desde 2020</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="memberships__card card--hidden">
-                    <div class="card__header">
-                        <div class="header__time">
-                            <span class="material-symbols-outlined">calendar_today</span>
-                            <h3>Trimestre</h3>
-                        </div>
-                        <div>
-                            <div class="header__offer">
-                                <p>DESCUENTO EN EFECTIVO</p>
-                                <p class="offer__price">$110.000 <span>/ 3 meses</span></p>
-                            </div>
-                            <p class="header__regularPrice">Precio regular: $130.000</p>
-                        </div>
-                    </div>
-                    <div class="card__advantages">
-                        <ul>
-                            <li>Acceso por 3 meses</li>
-                            <li>Area de musculacion</li>
-                            <li>Zona de cardio</li>
-                            <li>Horario completo</li>
-                            <li>Mejor ahorro</li>
-                        </ul>
-                    </div>
-                    <div class="card__button-container">
-                        <button class="card__button">
-                            <a href="#">Seleccionar Plan</a>
-                        </button>
-                    </div>
+                <div class="clients__join">
+                    <p>¿Listo para ser parte de nuestra familia?</p>
+                    <button class="clients__btn">
+                        <a target="_blank" href="https://wa.me/5491154558053?text=Hola%2C%20estuve%20explorando%20su%20página%20web%20y%20me%20gustaría%20inscribirme">Únete Hoy</a>
+                    </button>
                 </div>
-                <div class="memberships__card card--hidden">
-                    <div class="card__header">
-                        <div class="header__time">
-                            <span class="material-symbols-outlined">calendar_today</span>
-                            <h3>Semestre</h3>
+            </section>
+            <section class="contact" id="contact">
+                <h2>Contáctanos</h2>
+                <form class="form">
+                    <fieldset>
+                        <legend>Información personal</legend>
+                        <div>
+                            <label for="name">Nombre</label>
+                            <input type="text" name="name" id="name" placeholder="Nombre">
                         </div>
                         <div>
-                            <div class="header__offer">
-                                <p>DESCUENTO EN EFECTIVO</p>
-                                <p class="offer__price">$220.000 <span>/ 6 meses</span></p>
-                            </div>
-                            <p class="header__regularPrice">Precio regular: $260.000</p>
+                            <label for="lastname">Apellido</label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Apellido">
                         </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Información de contacto</legend>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="tu@email.com">
+                        </div>
+                        <div>
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" name="phone" id="phone" placeholder="11-1234-5678">
+                        </div>
+                    </fieldset>
+                    <div>
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" id="message" placeholder="¿En qué podemos ayudarte?"></textarea>
                     </div>
-                    <div class="card__advantages">
-                        <ul>
-                            <li>Acceso por 6 meses</li>
-                            <li>Area de musculacion</li>
-                            <li>Zona de cardio</li>
-                            <li>Horario completo</li>
-                            <li>Excelente descuento</li>
-                        </ul>
-                    </div>
-                    <div class="card__button-container">
-                        <button class="card__button">
-                            <a href="#">Seleccionar Plan</a>
-                        </button>
-                    </div>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-header">
+                <div class="footer__img">
+                    <img src="images/logo-laRosa.png" alt="Logo del gimnasio La Rosa">
                 </div>
-                <div class="memberships__card">
-                    <div class="card__header">
-                        <div class="header__time">
-                            <span class="material-symbols-outlined">calendar_today</span>
-                            <h3>Anual</h3>
-                        </div>
-                        <div>
-                            <div class="header__offer">
-                                <p>DESCUENTO EN EFECTIVO</p>
-                                <p class="offer__price">$440.000 <span>/ ano</span></p>
-                            </div>
-                            <p class="header__regularPrice">Precio regular: $480.000</p>
-                        </div>
-                    </div>
-                    <div class="card__advantages">
-                        <ul>
-                            <li>Acceso por 12 meses</li>
-                            <li>Area de musculacion</li>
-                            <li>Zona de cardio</li>
-                            <li>Horario completo</li>
-                            <li>Maximo ahorro</li>
-                        </ul>
-                    </div>
-                    <div class="card__button-container">
-                        <button class="card__button">
-                            <a href="#">Seleccionar Plan</a>
-                        </button>
-                    </div>
+                <div>
+                    <h2>La Rosa Gimnasio</h2>
+                    <h3 class="since1990">Desde 1990</h3>
                 </div>
             </div>
-            <div class="memberships__containerBtnAllCards">
-                <input type="checkbox" id="showAllCards" class="showAllCards">
-                <button>
-                    <label for="showAllCards" class="containerBtnAllCards__btnAllCards">
-                        <span class="allCards">Ver todos los planes</span>
-                        <span class="lessCards">Ver menos planes</span>
-                        <span class="material-symbols-outlined btnAllCards__arrow">
-                            keyboard_arrow_down
-                        </span>
-                    </label>
-                </button>
-            </div>
-            <p>*Los precios incluyen acceso completo a todas las instalaciones durante el horario establecido</p>
-        </section>
-        <section class="facilities">
-            <h2>Nuestras Instalaciones</h2>
-            <p>Conoce nuestros espacios equipados con tecnologia de ultima generacion</p>
-            <div class="facilities__gallery">
-                <div class="gallery__image">Imagen 1</div>
-                <div class="gallery__image">Imagen 2</div>
-                <div class="gallery__image">Imagen 3</div>
-                <div class="gallery__image">Imagen 4</div>
-                <div class="gallery__image">Imagen 5</div>
-                <div class="gallery__image">Imagen 6</div>
-            </div>
-        </section>
-        <section class="clients">
-            <h2>Lo que Dicen Nuestros Clientes</h2>
-            <p>Historias reales de personas que transformaron sus vidas en La Rosa</p>
-            <div class="clients__reviews">
-                <div class="reviews__client">
-                    <div>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                    </div>
-                    <div>
-                        <p>"Excelente gimnasio, atendido por profesionales atentos a la necesidad de cada uno, muy buenas maquinas, mantenimiento e higiene impecable. Mis 5 estrellas por la calidad y calidez."</p>
-                    </div>
-                    <div class="client__about">
-                        <div class="about__img">
-                            <img src="images/logo-laRosa.png" alt="">
-                        </div>
-                        <div>
-                            <p>Marisol Apostoles</p>
-                            <p>Miembro desde 2020</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reviews__client">
-                    <div>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                    </div>
-                    <div>
-                        <p>"El mejor lugar para entrenar en serio y seguro. Gente capacitada. Y ademas un clima social alegre."</p>
-                    </div>
-                    <div class="client__about">
-                        <div class="about__img">
-                            <img src="images/logo-laRosa.png" alt="">
-                        </div>
-                        <div>
-                            <p>Juan Sorini</p>
-                            <p>Miembro desde 2021</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reviews__client">
-                    <div>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                    </div>
-                    <div>
-                        <p>"Excelente ambiente. Profesores atentos a las necesidades y dudas. Excelente lugar."</p>
-                    </div>
-                    <div class="client__about">
-                        <div class="about__img">
-                            <img src="images/logo-laRosa.png" alt="">
-                        </div>
-                        <div>
-                            <p>Matias Romero</p>
-                            <p>Miembro desde 2023</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reviews__client">
-                    <div>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                        <span class="material-symbols-outlined iconStar">star</span>
-                    </div>
-                    <div>
-                        <p>"Notable asesoramiento y diversos aparatos para realizar la actividad que nos proporciona el profe. Todo OK."</p>
-                    </div>
-                    <div class="client__about">
-                        <div class="about__img">
-                            <img src="images/logo-laRosa.png" alt="">
-                        </div>
-                        <div>
-                            <p>Angel Simeoni</p>
-                            <p>Miembro desde 2020</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clients__join">
-                <p>Listo para ser parte de nuestra familia?</p>
-                <button class="clients__btn">
-                    <a href="#">Unete Hoy</a>
-                </button>
-            </div>
-        </section>
-        <section class="contact" id="contact">
-            <h2>Contactanos</h2>
-            <div class="contact__contact-info">
+            <div class="contact__contact-info contact-info--footer">
                 <div>
                     <span class="material-symbols-outlined">location_on</span>
                     <div>
-                        <h3>Ubicacion</h3>
-                        <a href="https://maps.app.goo.gl/NvFkTfbxW6jZkedx7" target="_blank">Av. Garcia del Rio 2584</a>
+                        <h3>Ubicación</h3>
+                        <a href="https://maps.app.goo.gl/NvFkTfbxW6jZkedx7" target="_blank">Av. García del Río 2584</a>
                     </div>
                 </div>
                 <div>
-                    <span class="material-symbols-outlined">Call</span>
+                    <span class="material-symbols-outlined">call</span>
                     <div>
-                        <h3>Telefono</h3>
-                        <a href="https://wa.me/5491154558053?text=Hola%2C%20estuve%20explorando%20su%20pagina%20web%20y%20me%20gustaria%20inscribirme" target="_blank">+54 9 11 5455-8053</a>
+                        <h3>Teléfono</h3>
+                        <a href="https://wa.me/5491154558053?text=Hola%2C%20estuve%20explorando%20su%20página%20web%20y%20me%20gustaría%20inscribirme" target="_blank">+54 9 11 5455-8053</a>
                     </div>
                 </div>
                 <div>
@@ -459,86 +512,11 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <form class="form">
-                <fieldset>
-                    <legend>Informacion personal</legend>
-                    <div>
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" placeholder="Nombre">
-                    </div>
-                    <div>
-                        <label for="lastname">Apellido</label>
-                        <input type="text" name= "lastname" id= "lastname" placeholder="Apellido">
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Informacion de contacto</legend>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="tu@email.com">
-                    </div>
-                    <div>
-                        <label for="phone">Telefono</label>
-                        <input type="tel" name="phone" id="phone" placeholder="11-1234-5678">
-                    </div>
-                </fieldset>
-                <div>
-                    <label for="message">Mensaje</label>
-                    <textarea name="message" id="message" placeholder="En que podemos ayudarte?"></textarea>
-                </div>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-header">
-            <div class="footer__img">
-                <img src="images/logo-laRosa.png" alt="Logo del gimnasio La Rosa">
             </div>
             <div>
-                <h2>La Rosa Gimnasio</h2>
-                <h3 class="since1990">Desde 1990</h3>
+                <p class="rightsReserved">© 2025 La Rosa Gimnasio. Todos los derechos reservados.</p>
             </div>
-        </div>
-        <div class="contact__contact-info contact-info--footer">
-                <div>
-                    <span class="material-symbols-outlined">location_on</span>
-                    <div>
-                        <h3>Ubicacion</h3>
-                        <a href="https://maps.app.goo.gl/NvFkTfbxW6jZkedx7" target="_blank">Av. Garcia del Rio 2584</a>
-                    </div>
-                </div>
-                <div>
-                    <span class="material-symbols-outlined">Call</span>
-                    <div>
-                        <h3>Telefono</h3>
-                        <a href="https://wa.me/5491154558053?text=Hola%2C%20estuve%20explorando%20su%20pagina%20web%20y%20me%20gustaria%20inscribirme" target="_blank">+54 9 11 5455-8053</a>
-                    </div>
-                </div>
-                <div>
-                    <span class="material-symbols-outlined">mail</span>
-                    <div>
-                        <h3>Email</h3>
-                        <a href="#">info@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-info__social-ntw">
-                    <div>
-                        <a href="https://www.facebook.com/gimnasio.larosa" target="_blank">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.instagram.com/gimnasiolarosa/" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        <div>
-            <p class="rightsReserved">© 2025 La Rosa Gimnasio. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-</body>
+        </footer>
+        <a target="_blank" href="https://wa.me/5491154558053?text=Hola%2C%20estuve%20explorando%20su%20página%20web%20y%20me%20gustaría%20inscribirme" class="wpp-logo"><i class="fa-brands fa-whatsapp"></i></a>
+    </body>
 </html>

@@ -22,6 +22,18 @@ img {
     height: 100%;
     object-fit: cover;
 }
+.wpp-logo {
+    position: fixed;
+    top: 700px;
+    right: 20px;
+    font-size: 40px;
+    color: #22b81d;
+    transition: scale .5s, translate .5s;
+}
+.wpp-logo:hover {
+    scale: 1.2;
+    translate: 0 -5px;
+}
 
 /*--- NAVBAR ---*/
 
@@ -262,10 +274,16 @@ main {
 .services__cards, .schedules, .memberships, .facilities, .clients, .contact {
     width: 100%;
 }
+.services__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .card--services, .card--schedules {
     width: 100%;
+    max-width: 500px;
     height: 150px;
-    margin: 30px 0;
+    margin: 30px;
     align-items: start;
     padding: 20px;
 }
@@ -274,6 +292,7 @@ main {
 
 .card--schedules {
     height: max-content;
+    max-width: 800px;
 }
 .card--schedules:hover {
     transform: translate(0);
@@ -318,14 +337,15 @@ main {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 .memberships__card {
     background-color: #111;
-    border: solid 1px #222;
+    border: solid 1px #333;
     width: 100%;
     max-width: 400px;
     height: 380px;
-    margin-top: 50px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -390,7 +410,6 @@ main {
 }
 .card--popular {
     border: solid 2px var(--red-color);
-    /* box-shadow: 0 0 10px var(--red-color), 0 0 40px var(--red-color); */
     position: relative;
 }
 .card--popular::before {
@@ -460,17 +479,18 @@ main {
 
 /*--- FACILITIES ---*/
 
-.facilities__gallery, .clients__reviews {
+/* .facilities__gallery, .clients__reviews {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    gap: 20px;
+    gap: 10px;
     overflow-x: auto;
     scroll-behavior: smooth;
     anchor-name: --carousel;
     scroll-snap-type: x mandatory;
     margin-top: 50px;
 }
+
 .facilities__gallery::-webkit-scrollbar, .clients__reviews::-webkit-scrollbar {
     display: none;
 }
@@ -509,38 +529,101 @@ main {
     background-color: #222;
     height: 300px;
     flex: 0 0 100%;
+    max-width: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
     border-radius: 15px;
+} */
+.facilities__gallery {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 50px;
+    padding: 10px 0;
+}
+.facilities__gallery::-webkit-scrollbar {
+    display: none;
+}
+.gallery__group {
+    display: flex;
+    gap: 20px;
+    animation: spin 20s infinite linear;
+    padding-right: 20px;
+}
+.gallery__image {
+    background-color: #222;
+    height: 300px;
+    flex: 0 0 100vw;
+    max-width: 600px;
+    text-align: center;
+    align-content: center;
+    border-radius: 15px;
+}
+.facilities__gallery:hover .gallery__group {
+    animation-play-state: paused;
 }
 
 /*--- CLIENTS ---*/
 
 .clients__reviews {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    margin-top: 50px;
     anchor-name: --reviews-carousel;
+}
+.clients__reviews::-webkit-scrollbar {
+    display: none;
 }
 .clients__reviews::scroll-button(left), .clients__reviews::scroll-button(right) {
     position-anchor: --reviews-carousel;
     background-color: #dc143cbb;
-    translate: 55%;
+    translate: -55%;
     height: 30px;
     width: 30px;
+    content: url(images/arrow-carousel.svg);
+    border: none;
+    border-radius: 50%;
+    background-color: #0005;
+    color: var(--white-color);
+    cursor: pointer;
+    position: fixed;
+    position-area: right center;
+    padding: 5px 0 0 3px;
 }
-.clients__reviews::scroll-button(right) {
-    translate: -55%;
+.clients__reviews::scroll-button(left) {
+    translate: 55%;
+    position-area: left center;
+    transform: rotate(180deg);
+}
+.clients__reviews::scroll-button(left):active, .clients__reviews::scroll-button(right):active {
+    scale: .9;
+}
+.clients__reviews::scroll-button(left):disabled, .clients__reviews::scroll-button(right):disabled {
+    scale: 1;
+    cursor: auto;
+    opacity: .5;
 }
 .reviews__client {
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+    max-width: 500px;
     height: 220px;
     padding: 20px;
+    display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
     font-size: 13px;
     border-color: #333;
     background-color: #111;
-    margin: 0;
 }
 .iconStar {
     font-variation-settings:
@@ -646,6 +729,7 @@ main {
     border: solid 1px #333;
     margin-top: 50px;
     width: 100%;
+    max-width: 700px;
 }
 .form fieldset {
     border: solid 1px #333;
@@ -732,7 +816,11 @@ footer p {
 .contact-info--footer {
     display: flex;
     flex-direction: column;
+    align-self: center;
     margin: 20px 0;
+}
+.contact-info__social-ntw {
+    align-self: center;
 }
 
 
@@ -779,5 +867,74 @@ footer p {
     100% {
         opacity: 0;
         display: none;
+    }
+}
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100%;
+    }
+}
+
+/*--- MEDIA-QUERIES ---*/
+
+@media screen and (min-width: 750px) {
+    .contact-info--footer {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 850px) {
+    .navBar {
+        padding: 5px 20px;
+    }
+    .navBar__menuIcon {
+        display: none;
+    }
+    .navBar__list {
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        opacity: 1;
+        pointer-events: all;
+        transition: none;
+    }
+    .navBar__list ul {
+        display: flex;
+        align-items: center;
+    }
+    .list__item a{
+        margin: 0;
+        padding: 10px 20px;
+    }
+    .about__content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .about__text {
+        width: 40%;
+    }
+    .about__cards {
+        margin: 0;
+        width: 50%;
+        max-width: 400px;
+    }
+    .services__cards {
+        margin-top: 30px;
+    }
+    .card--services {
+        height: 180px;
+        width: 300px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .reviews__client {
+        scroll-snap-align: start;
     }
 }
