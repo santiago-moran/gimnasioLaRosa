@@ -24,7 +24,7 @@ img {
 }
 .wpp-logo {
     position: fixed;
-    top: 90%;
+    bottom: 30px;
     right: 20px;
     font-size: 40px;
     color: #22b81d;
