@@ -274,6 +274,7 @@ main {
 
 .services {
     background-color: #111;
+    width: 100%;
 }
 .services h3 {
     font-size: 15px;
